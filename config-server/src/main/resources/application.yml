@@ -1,0 +1,32 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: '@project.name@'
+  cloud:
+    config:
+      server:
+        monitor:
+          gitlab:
+            enalbed: true
+          github:
+            enabled: false
+          bitbucket:
+            enabled: false
+        git:
+          uri: http://localhost/andsamp/config-changes.git
+          username: andsamp
+          password: P@ssword5
+          basedir: target/config
+    bus:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+
+management:
+  security:
+    enabled: false
+  context-path: /admin
